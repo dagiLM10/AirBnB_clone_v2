@@ -13,7 +13,7 @@ def do_pack():
     making an archive on web_static folder
     """
 
-    time = datatime.now()
+    time = datetime.now()
     archive = 'web_static_' + time.strftime("%Y%m%d%H%M%S") + '.' + 'tgz'
     local('mkdir -p versions')
     create = local('tar -cvzf versions/{} web_static'.format(archive))
