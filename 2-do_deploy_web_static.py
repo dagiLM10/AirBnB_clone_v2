@@ -4,7 +4,7 @@ Fabric script based on the file 1-pack_web_static.py that distributes an
 archive to the web servers
 """
 
-from favric.api import put, run, env
+from fabric.api import put, run, env
 from os.path import exists
 env.host = ['100.25.31.37', '18.215.160.9']
 
@@ -19,7 +19,7 @@ def do_deploy(archive_path):
         path = "/data/web_static/releases/"
         put(archive_path, '/tmp/')
         run('mkdir -p {}{}/'.format(path, no_ext))
-        run('tar -xzf 'tmp'{} -c {}{}/'.format(file_n, path, no_ext))
+        run('tar -xzf /tmp/{} -c {}{}/'.format(file_n, path, no_ext))
         run('rm /tmp/{}'.format(file_n))
         run('mv {0}{1}/web_static/* {0}{1}/'.format(path, no_ext))
         run('rm -rf {}{}/web_static'.format(path, no_ext))
