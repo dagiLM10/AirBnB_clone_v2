@@ -13,7 +13,7 @@ def index():
     return 'Hello HBNB!'
 
 
-@app.route('/c/<text>'>, strict_slashe=False)
+@app.route('/hbnb'>, strict_slashes=False)
 def hbnb():
     """returns HBNB"""
     return 'HBNB'
@@ -22,13 +22,13 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def cisfun(text):
     """display "C " followed by the value of the text variable"""
-    return 'C ' + text.rplace('_', ' ')
+    return 'C ' + text.replace('_', ' ')
 
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def pythoniscool(text='is cool'):
-    """display "Python ", followed by the of the text variable"""
+    """display "Python ", followed by the value of the text variable"""
     return 'Python ' + text.replace('_', ' ')
 
 
@@ -38,7 +38,7 @@ def imanumber(n):
     return "{:d} is a number".format(n)
 
 
-@app.route('/number_template/<int.n>', strict_slashes=False)
+@app.route('/number_template/<int:n>', strict_slashes=False)
 def numberandtemplates(n):
     """display a HTML page only if n is an integer"""
     return render_template('5-number.html', n=n)
