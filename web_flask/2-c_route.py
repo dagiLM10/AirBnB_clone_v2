@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def index():
-    """return Hello HBNB!"""
+    """returns Hello HBNB!"""
     return 'Hello HBNB!'
 
 
@@ -19,7 +19,7 @@ def hbnb():
     return 'HBNB'
 
 
-@app.route('/c/<text>', strict_slashes-False)
+@app.route('/c/<text>', strict_slashes=False)
 def cisfun(text):
     """display "C " followed by the value of the text variable"""
     return 'C ' + text.replace('_', ' ')
